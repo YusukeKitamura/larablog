@@ -12,7 +12,7 @@ class PostsController extends Controller
     public function index(Request $request) {
         $posts = Post::orderBy('created_at', 'desc');
         if ($request->get('category')) {
-            $posts = $posts->where(function($query){
+            $posts = $posts->where(function($query) use ($request) {
                         $query->orWhere('category1_id', $request->get('category'))
                               ->orWhere('category2_id', $request->get('category'));
                         });
