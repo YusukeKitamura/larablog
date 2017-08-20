@@ -1,0 +1,141 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    font-family: Verdana, sans-serif;
+}
+
+.container {
+    width:1080px;
+    margin: 0;
+}
+
+h1 {
+    font-size: 20px;
+    border-bottom: 1px solid #bbb;
+    padding-bottom: 4px;
+}
+
+h2 {
+    font-size: 18px;
+}
+
+ul > li {
+    padding: 3px 0;
+}
+
+.pull-right {
+    float: right;
+}
+
+.fs12 {
+    font-size: 12px;
+    font-weight: normal;
+}
+
+input[type=text] {
+    padding: 4px;
+}
+
+input[type=submit] {
+    padding: 4px;
+}
+
+.hidden {
+    display: none;
+}
+
+.flash_message {
+    text-align : center;
+    padding    : 4px;
+    color      : green;
+    background : Lavender;
+}
+
+.flash_message {
+    text-align : center;
+    padding:   : 4px;
+    color      : red;
+    background : Lavender;
+}
+
+p .form-control {
+    width: 300px;
+}
+
+.post-form {
+    padding: 8px;
+}
+
+.content-wrapper {
+    padding: 8px;
+    width:95%;
+}
+
+/* マークダウン */
+.box {
+    background-color: rgba( 255, 172, 255, 0.55 );
+}
+
+.sidebox {
+    background-color: rgba( 172, 255, 255, 0.55 );
+}
+
+html, body, #editor {
+  margin: 0;
+  height: 100%;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  color: #333;
+}
+
+textarea, #editor div {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  vertical-align: top;
+  box-sizing: border-box;
+  padding: 0 20px;
+}
+
+.pagination {
+    margin: 10px;
+}
+
+.pagination li {
+    width: 25px;
+    height: 25px;
+}
+
+textarea {
+    width: 400px;
+    height: 300px;
+    border-right: 1px solid #ccc;
+    resize: none;
+    outline: none;
+    background-color: #f6f6f6;
+    font-size: 14px;
+    font-family: 'Monaco', courier, monospace;
+    padding: 1px;
+    overflow: scroll;
+}
+
+code {
+    color: #f66;
+}
+
+.prev-form {
+    overflow: scroll;
+}
+
+.panel-heading {
+    padding: 0;
+}
+
+.panel-body {
+    padding: 0;
+}
+
+.container {
+    padding-left: 1px;
+    padding-top: 10px;
+}
