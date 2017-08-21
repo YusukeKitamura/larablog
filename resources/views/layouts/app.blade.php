@@ -70,7 +70,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}" style="font-size: 22px;">
-                        私のブログ
+                        あるWebプログラマの修行日記 Ver.2
                     </a>
                 </div>
 
@@ -138,3 +138,4 @@
     @yield('script')
 </body>
 </html>
+
