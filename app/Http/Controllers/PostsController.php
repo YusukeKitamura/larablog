@@ -39,19 +39,19 @@ class PostsController extends Controller
         $post = new Post();
         $post->fill($request->all());
         $post->save();
-        return redirect('/')->with('flash_message', 'Post added!');
+        return redirect('/')->with('flash_message', '投稿しました!');
     }
 
     public function update(PostRequest $request, $id) {
         $post = Post::findOrFail($id);
         $post->fill($request->all());
         $post->save();
-        return redirect('/')->with('flash_message', 'Post updated!');
+        return redirect('/')->with('flash_message', '投稿を更新しました!');
     }
 
     public function destroy($id) {
         $post = Post::findOrFail($id);
         $post->delete();
-        return redirect('/')->with('flash_message', 'Post deleted!');
+        return redirect('/')->with('flash_message', '投稿を削除しました!');
     }
 }

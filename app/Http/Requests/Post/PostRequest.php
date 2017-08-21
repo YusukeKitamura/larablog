@@ -32,4 +32,14 @@ class PostRequest extends FormRequest
 
         return $rules;
     }
+
+    public function messages()
+    {
+        return [
+            'title.required'          => 'タイトルは必須です。',
+            'title.max'               => 'タイトルは最大40文字です。',
+            'category1_id.required'   => 'カテゴリー１は必須です。',
+            'body.required'           => '本文は必須です。',
+        ];
+    }
 }
