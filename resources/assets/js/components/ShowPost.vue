@@ -7,7 +7,7 @@
             <span style="font-weight:bold;">本文</span><br>
             <div class="panel panel-default" style="background-color:rgba( 255, 255, 255, 0.85 )">
                 <div class="panel-body">
-                    <div v-html="compiledMarkdown"></div>
+                    <div v-html="compiledMarkdown" v-once></div>
                 </div>
             </div>
         </div>

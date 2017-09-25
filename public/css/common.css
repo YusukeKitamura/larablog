@@ -108,7 +108,7 @@ textarea, #editor div {
 
 textarea {
     width: 400px;
-    height: 300px;
+    height: 360px;
     border-right: 1px solid #ccc;
     resize: none;
     outline: none;
@@ -128,6 +128,7 @@ code {
 }
 
 .panel-heading {
+    width: 420px;
     padding: 0;
 }
 

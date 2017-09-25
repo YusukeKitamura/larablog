@@ -124,7 +124,21 @@
             </section>
 
             <section class="content">
-                @yield('content')
+                <div class="row">
+                    <div class="col-md-8">
+                        @yield('content')
+                    </div>
+                    <div class="col-md-4">
+                        <div class="sidebox" style="margin-top: 22px;">
+                            <span style="font-weight: bold;">カテゴリー</span><br>
+                            <?php $categories = categories(); ?>
+                            @foreach($categories as $category)
+                            <?php $url_category = url('/')."?category=".$category->id; ?>
+                            <a href="{{ $url_category }}">{{ $category->category_name }}</a><br>
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
             </section>
         </div>
     </div>

@@ -1796,7 +1796,7 @@ var body = $('#body-data').text();
 
     computed: {
         compiledMarkdown: function compiledMarkdown() {
-            return marked(this.input_text, { sanitize: true });
+            return "<div v-pre>" + marked(this.input_text, { sanitize: true }) + "</div>";
         }
     },
     methods: {
@@ -31963,12 +31963,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_c('div', {
     staticClass: "panel-body"
-  }, [_c('div', {
+  }, [_vm._m(0)])])])])
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
     domProps: {
       "innerHTML": _vm._s(_vm.compiledMarkdown)
     }
-  })])])])])
-},staticRenderFns: []}
+  })
+}]}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
@@ -31993,11 +31995,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('div', {
     staticClass: "panel-heading"
   }, [_c('textarea', {
+    staticStyle: {
+      "height": "360px"
+    },
     attrs: {
       "placeholder": "",
       "name": "body",
-      "cols": "50",
-      "rows": "16"
+      "cols": "54",
+      "rows": "20"
     },
     domProps: {
       "value": _vm.input_text
@@ -32013,7 +32018,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "panel-body"
   }, [_c('div', {
     staticStyle: {
-      "height": "360px"
+      "height": "350px"
     },
     domProps: {
       "innerHTML": _vm._s(_vm.compiledMarkdown)
@@ -32044,11 +32049,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('div', {
     staticClass: "panel-heading"
   }, [_c('textarea', {
+    staticStyle: {
+      "height": "360px"
+    },
     attrs: {
       "placeholder": "",
       "name": "body",
-      "cols": "50",
-      "rows": "16"
+      "cols": "54",
+      "rows": "20"
     },
     domProps: {
       "value": _vm.input_text
@@ -32064,7 +32072,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "panel-body"
   }, [_c('div', {
     staticStyle: {
-      "height": "360px"
+      "height": "350px"
     },
     domProps: {
       "innerHTML": _vm._s(_vm.compiledMarkdown)

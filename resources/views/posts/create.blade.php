@@ -2,44 +2,10 @@
 
 @section('title', '新規投稿')
 
-@section('style')
-<style>
-html, body, #editor {
-  margin: 0;
-  height: 100%;
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-  color: #333;
-}
-
-textarea, #editor div {
-  display: inline-block;
-  width: 49%;
-  height: 100%;
-  vertical-align: top;
-  box-sizing: border-box;
-  padding: 0 20px;
-}
-
-textarea {
-  border: none;
-  border-right: 1px solid #ccc;
-  resize: none;
-  outline: none;
-  background-color: #f6f6f6;
-  font-size: 14px;
-  font-family: 'Monaco', courier, monospace;
-  padding: 20px;
-}
-
-code {
-  color: #f66;
-}
-</style>
-@endsection
-
 @section('content')
+<div class="box">
 <h1>
-    <a href="{{ url('/') }}" class="pull-right fs12">戻る</a>
+    <a href="{{ url('/') }}" class="pull-right">戻る</a>
     新規投稿
 </h1>
 {!! Form::open([
@@ -49,7 +15,7 @@ code {
     'name'   => 'form']
 ) !!}
 {{ csrf_field() }}
-<div>
+<div class="row">
     <div class="col-md-10">
         <p>
             <span>タイトル（必須）</span><br>
@@ -71,11 +37,14 @@ code {
         <br>
         <form_create></form_create>
     </div>
+</div>
+<div class="row">
     <div class="col-md-7">
         <p>
             <input type="submit" value="投稿する"  class="btn btn-primary">
         </p>
     </div>
+</div>
 </div>
 {!! Form::close() !!}
 @endsection

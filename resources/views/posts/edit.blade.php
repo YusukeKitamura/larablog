@@ -3,8 +3,9 @@
 @section('title', $post->title.' 編集')
 
 @section('content')
+<div class="box">
 <h1>
-    <a href="{{ url('/') }}" class="pull-right fs12">戻る</a>
+    <a href="{{ url('/') }}" class="pull-right">戻る</a>
     記事編集
 </h1>
 {!! Form::open([
@@ -13,7 +14,7 @@
     'name'   => 'form']
 ) !!}
 {{ csrf_field() }}
-<div>
+<div class="row">
     <div class="col-md-7">
         <p>
             <span>タイトル（必須）</span><br>
@@ -25,11 +26,11 @@
         </p>
         <p>
             <span>カテゴリー２</span><br>
-        @if ($post->category2)
-            {!! Form::select('category2_id', \App\Category::all()->pluck('category_name', 'id')->toArray(), $post->category2->id, ['class' => 'form-control on-focus-select', 'placeholder' => '-- 選択 --']) !!}
-        @else
-            {!! Form::select('category2_id', \App\Category::all()->pluck('category_name', 'id')->toArray(), null, ['class' => 'form-control on-focus-select', 'placeholder' => '-- 選択 --']) !!}
-        @endif
+            @if ($post->category2)
+                {!! Form::select('category2_id', \App\Category::all()->pluck('category_name', 'id')->toArray(), $post->category2->id, ['class' => 'form-control on-focus-select', 'placeholder' => '-- 選択 --']) !!}
+            @else
+                {!! Form::select('category2_id', \App\Category::all()->pluck('category_name', 'id')->toArray(), null, ['class' => 'form-control on-focus-select', 'placeholder' => '-- 選択 --']) !!}
+            @endif
         </p>
         <a type="button" class="btn btn-default btn-xs" href="{{ url('/categories/create') }}" style="font-size:12px;">
             新規カテゴリー作成
@@ -44,6 +45,7 @@
             </p>
         </div>
     </div>
+</div>
 </div>
 {!! Form::close() !!}
 @endsection

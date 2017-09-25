@@ -10,16 +10,13 @@ use File;
 use Image;
 use Validator;
 use DB;
+use App\Http\Requests\Picture\PictureRequest;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 class PicturesController extends Controller
 {
-    public function store(Request $request) {
+    public function store(PictureRequest $request) {
         $image = Input::file('image');
-
-        $validator = Validator::make(compact('image'), [
-            'image' => 'required|mimes:jpeg,bmp,png|image|max:1024',
-        ]);
 
         $response = [
             'keep_name'   => null,
@@ -27,22 +24,18 @@ class PicturesController extends Controller
             'errors'      => [],
         ];
 
-        if ($validator->fails()) {
-            $response['errors'] = $validator->errors();
-        } else {
-            $path = storage_path(). '/app/images/';
-            $name = date('YmdHs') . '_' . $image->getClientOriginalName();
-            $response['uploaded_name']   = $name;
+        $path = storage_path(). '/app/images/';
+        $name = date('YmdHs') . '_' . $image->getClientOriginalName();
+        $response['uploaded_name']   = $name;
 
 
-            DB::transaction(function () use ($image, $path, $name) {
-                $image->move($path, $path.$name);
-                $row = new Picture;
-                $row->storage_path = $name;
-                $row->save();
-            });
-        }
-        return redirect($request->get('cur_url'));
+        DB::transaction(function () use ($image, $path, $name) {
+            $image->move($path, $path.$name);
+            $row = new Picture;
+            $row->storage_path = $name;
+            $row->save();
+        });
+        return redirect($request->get('cur_url'))->with('flash_message', '画像を追加しました!');
     }
 
     public function response($name)
