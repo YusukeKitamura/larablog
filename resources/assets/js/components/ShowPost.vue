@@ -3,11 +3,11 @@
          <div style="display:none;">
             <textarea placeholder="" name="body" cols="50" rows="10" :value="input_text" @input="update"></textarea>
         </div>
-        <div class="col-md-5">
+        <div class="col-md-11">
             <span style="font-weight:bold;">本文</span><br>
-            <div class="panel panel-default">
+            <div class="panel panel-default" style="background-color:rgba( 255, 255, 255, 0.85 )">
                 <div class="panel-body">
-                    <div v-html="compiledMarkdown"></div>
+                    <div v-html="compiledMarkdown" v-once></div>
                 </div>
             </div>
         </div>

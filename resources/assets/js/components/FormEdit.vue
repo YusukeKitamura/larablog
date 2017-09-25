@@ -5,7 +5,7 @@
                 <span>本文（必須）</span><br>
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <textarea placeholder="" name="body" cols="50" rows="16" :value="input_text" @input="update"></textarea>
+                        <textarea placeholder="" name="body" cols="54" rows="20" :value="input_text" @input="update" style="height:360px;"></textarea>
                     </div>
                 </div>
             </div>
@@ -13,7 +13,7 @@
                 <span>プレビュー</span><br>
                 <div class="panel panel-default prev-form">
                     <div class="panel-body">
-                        <div v-html="compiledMarkdown" style="height:360px;"></div>
+                        <div v-html="compiledMarkdown" style="height:350px;"></div>
                     </div>
                 </div>
             </div>
@@ -36,7 +36,7 @@
         },
         computed: {
             compiledMarkdown: function () {
-                return marked(this.input_text, { sanitize: true })
+                return "<div v-pre>"+marked(this.input_text, { sanitize: true })+"</div>"
             }
         },
         methods: {

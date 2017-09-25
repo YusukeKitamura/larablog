@@ -15,7 +15,9 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('example', require('./components/Example.vue'));
+Vue.component('form_create', require('./components/FormCreate.vue'));
+Vue.component('form_edit', require('./components/FormEdit.vue'));
+Vue.component('show_post', require('./components/ShowPost.vue'));
 
 const app = new Vue({
     el: '#app'
