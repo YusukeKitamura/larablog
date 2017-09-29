@@ -27,15 +27,24 @@ class PostsController extends Controller
     }
 
     public function create() {
+        if (!\Auth::check()) {
+            return redirect('/');
+        }
         return view('posts.create');
     }
 
     public function edit($id) {
+        if (!\Auth::check()) {
+            return redirect('/');
+        }
         $post = Post::findOrFail($id);
         return view('posts.edit')->with('post', $post);
     }
 
     public function store(PostRequest $request) {
+        if (!\Auth::check()) {
+            return redirect('/');
+        }
         $post = new Post();
         $post->fill($request->all());
         $post->save();
@@ -43,6 +52,9 @@ class PostsController extends Controller
     }
 
     public function update(PostRequest $request, $id) {
+        if (!\Auth::check()) {
+            return redirect('/');
+        }
         $post = Post::findOrFail($id);
         $post->fill($request->all());
         $post->save();
@@ -50,6 +62,9 @@ class PostsController extends Controller
     }
 
     public function destroy($id) {
+        if (!\Auth::check()) {
+            return redirect('/');
+        }
         $post = Post::findOrFail($id);
         $post->delete();
         return redirect('/')->with('flash_message', '投稿を削除しました!');

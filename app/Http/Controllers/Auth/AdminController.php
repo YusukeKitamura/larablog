@@ -12,6 +12,9 @@ use App\Http\Requests\Post\PostRequest;
 class AdminController extends Controller
 {
     public function index(Request $request) {
+        if (!\Auth::check()) {
+            return redirect('/');
+        }
         $posts = Post::orderBy('created_at', 'desc');
         if ($request->get('category')) {
             $posts = $posts->where('category_id', $request->get('category'));
