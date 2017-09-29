@@ -16,6 +16,9 @@ use Symfony\Component\HttpFoundation\File\UploadedFile;
 class PicturesController extends Controller
 {
     public function store(PictureRequest $request) {
+        if (!\Auth::check()) {
+            return redirect('/');
+        }
         $image = Input::file('image');
 
         $response = [
@@ -40,6 +43,9 @@ class PicturesController extends Controller
 
     public function response($name)
     {
+        if (!\Auth::check()) {
+            return redirect('/');
+        }
         $name = preg_replace('#\.\.\/#', '', $name);
 
         $path      = storage_path().'/app/images/';
