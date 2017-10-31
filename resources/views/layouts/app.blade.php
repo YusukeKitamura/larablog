@@ -130,11 +130,24 @@
                     </div>
                     <div class="col-md-4">
                         <div class="sidebox" style="margin-top: 22px;">
+                            {!! Form::model(null, ['method' => 'GET', 'name' => 'form']) !!}
+                            <span style="font-weight: bold;">検索フォーム</span><br>
+                            {!! Form::text('words', null, ['placeholder' => '検索ワード']) !!}
+                            <input type="submit" value="検索"  class="btn btn-primary">
+                            <br>
+                            {!! Form::close() !!}
+                        </div>
+
+                        <div class="sidebox" style="margin-top: 12px;">
                             <span style="font-weight: bold;">カテゴリー</span><br>
                             <?php $categories = categories(); ?>
                             @foreach($categories as $category)
-                            <?php $url_category = url('/')."?category=".$category->id; ?>
-                            <a href="{{ $url_category }}">{{ $category->category_name }}</a><br>
+                            <?php 
+                                $url_category = url('/')."?category=".$category->id;
+                                $count1 = \App\Post::where('category1_id', $category->id)->count();
+                                $count2 = \App\Post::where('category2_id', $category->id)->count();
+                            ?>
+                            <a href="{{ $url_category }}">{{ $category->category_name }} ({{$count1+$count2}})</a><br>
                             @endforeach
                         </div>
                     </div>

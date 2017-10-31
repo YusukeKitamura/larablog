@@ -17,8 +17,14 @@ class PostsController extends Controller
                               ->orWhere('category2_id', $request->get('category'));
                         });
         }
+        if ($request->get('words')) {
+            $posts = $posts->where(function($query) use ($request) {
+                        $query->orWhere('title', 'LIKE', '%'.$request->get('words').'%')
+                              ->orWhere('body', 'LIKE', '%'.$request->get('words').'%');
+                        });
+        }
         $posts = $posts->paginate(10);
-        return view('posts.index')->with('posts', $posts);
+        return view('posts.index', compact('posts'));
     }
 
     public function show($id) {

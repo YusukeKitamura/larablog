@@ -18,7 +18,7 @@
         </p>
         <span style="font-weight:bold;">投稿日時</span>
         <p>{{ $post->created_at }}</p>
-        <div id="body-data" style="display:none;">{{$post->body}}</div>
+        <div id="body-data" style="display:none;" v-pre>{{$post->body}}</div>
         <show_post></show_post>
         @if (Auth::check())
         <a href="{{ action('PostsController@edit', $post->id) }}">[編集]</a><br>

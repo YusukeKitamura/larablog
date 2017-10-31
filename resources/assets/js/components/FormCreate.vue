@@ -41,7 +41,7 @@
         methods: {
             update: _.debounce(function (e) {
                 this.input_text = e.target.value
-            }, 300)
+            }, 10)
         }
     }
 </script>

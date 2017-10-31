@@ -37,7 +37,7 @@
         </a>
         <br>
 
-        {!! Form::textarea('body', $post->body, ['id' => 'body-data', 'style' => 'display:none;']) !!}
+        {!! Form::textarea('body', $post->body, ['id' => 'body-data', 'style' => 'display:none;', 'v-pre']) !!}
         <form_edit></form_edit>
         <div class="col-md-7">
             <p>
