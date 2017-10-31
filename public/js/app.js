@@ -1747,7 +1747,7 @@ marked.setOptions({
     methods: {
         update: _.debounce(function (e) {
             this.input_text = e.target.value;
-        }, 300)
+        }, 10)
     }
 });
 
@@ -1802,7 +1802,7 @@ var body = $('#body-data').text();
     methods: {
         update: _.debounce(function (e) {
             this.input_text = e.target.value;
-        }, 300)
+        }, 10)
     }
 });
 
@@ -1850,7 +1850,7 @@ var body = $('#body-data').text();
     methods: {
         update: _.debounce(function (e) {
             this.input_text = e.target.value;
-        }, 300)
+        }, 10)
     }
 });
 
