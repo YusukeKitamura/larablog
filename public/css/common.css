@@ -74,11 +74,11 @@ p .form-control {
 
 /* マークダウン */
 .box {
-    background-color: rgba( 255, 172, 255, 0.55 );
+    background-color: rgba( 255, 172, 255, 0.85 );
 }
 
 .sidebox {
-    background-color: rgba( 172, 255, 255, 0.55 );
+    background-color: rgba( 200, 255, 200, 0.85 );
 }
 
 html, body, #editor {
@@ -107,7 +107,7 @@ textarea, #editor div {
 }
 
 textarea {
-    width: 400px;
+    width: 700px;
     height: 360px;
     border-right: 1px solid #ccc;
     resize: none;
@@ -128,7 +128,7 @@ code {
 }
 
 .panel-heading {
-    width: 420px;
+    width: 380px;
     padding: 0;
 }
 

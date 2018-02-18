@@ -1726,6 +1726,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 marked.setOptions({
     highlight: function highlight(code, lang) {
@@ -1757,6 +1759,8 @@ marked.setOptions({
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
 //
 //
 //
@@ -31989,7 +31993,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('div', {
     staticClass: "row"
   }, [_c('div', {
-    staticClass: "col-md-5"
+    staticClass: "col-md-8"
   }, [_c('span', [_vm._v("本文（必須）")]), _c('br'), _vm._v(" "), _c('div', {
     staticClass: "panel panel-default"
   }, [_c('div', {
@@ -32010,8 +32014,10 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     on: {
       "input": _vm.update
     }
-  })])])]), _vm._v(" "), _c('div', {
-    staticClass: "col-md-5"
+  })])])])]), _vm._v(" "), _c('div', {
+    staticClass: "row"
+  }, [_c('div', {
+    staticClass: "col-md-8"
   }, [_c('span', [_vm._v("プレビュー")]), _c('br'), _vm._v(" "), _c('div', {
     staticClass: "panel panel-default prev-form"
   }, [_c('div', {
@@ -32043,7 +32049,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('div', {
     staticClass: "row"
   }, [_c('div', {
-    staticClass: "col-md-5"
+    staticClass: "col-md-8"
   }, [_c('span', [_vm._v("本文（必須）")]), _c('br'), _vm._v(" "), _c('div', {
     staticClass: "panel panel-default"
   }, [_c('div', {
@@ -32064,8 +32070,10 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     on: {
       "input": _vm.update
     }
-  })])])]), _vm._v(" "), _c('div', {
-    staticClass: "col-md-5"
+  })])])])]), _vm._v(" "), _c('div', {
+    staticClass: "row"
+  }, [_c('div', {
+    staticClass: "col-md-8"
   }, [_c('span', [_vm._v("プレビュー")]), _c('br'), _vm._v(" "), _c('div', {
     staticClass: "panel panel-default prev-form"
   }, [_c('div', {

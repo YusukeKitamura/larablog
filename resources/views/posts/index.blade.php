@@ -3,12 +3,16 @@
 @section('title', 'あるWebプログラマの修行日記 Ver.2')
 
 @section('content')
-    <h1 style="background-color:rgba( 255, 255, 255, 0.85 )">
+    <div class="box" style="margin-bottom: 10px; background-color: rgba(255, 255, 200, 0.85); height: 80px;">
+        <h1 style="border-bottom: none;">
         ブログ記事一覧
+        </h1>
         @if (Auth::check())
-        <a href="{{ url('/posts/create') }}" class="pull-right">新規投稿</a>
+        <h1 style="border-bottom: none;">
+            <a href="{{ url('/posts/create') }}" class="pull-right">新規投稿</a>
+        </h1>
         @endif
-    </h1>
+    </div>
     <div class="box">
         <ul>
             @forelse ($posts as $post)

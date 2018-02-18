@@ -3,7 +3,7 @@
 @section('title', $post->title.' 編集')
 
 @section('content')
-<div class="box">
+<div class="box" style="overflow-x:scroll;">
 <h1>
     <a href="{{ url('/') }}" class="pull-right">戻る</a>
     記事編集
