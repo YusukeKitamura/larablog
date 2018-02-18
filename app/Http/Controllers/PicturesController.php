@@ -43,9 +43,9 @@ class PicturesController extends Controller
 
     public function response($name)
     {
-        if (!\Auth::check()) {
-            return redirect('/');
-        }
+        //if (!\Auth::check()) {
+        //    return redirect('/');
+        //}
         $name = preg_replace('#\.\.\/#', '', $name);
 
         $path      = storage_path().'/app/images/';
