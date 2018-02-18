@@ -124,7 +124,8 @@
             </section>
 
             <section class="content">
-                <div class="row">
+                <?php $url=route('picture.response', ['name' => '201708211502_sIMG_0035.jpg']); ?>
+                <div class="row" style="background-image: url({{$url}});">
                     <div class="col-md-8">
                         @yield('content')
                     </div>
@@ -141,14 +142,26 @@
                         <div class="sidebox" style="margin-top: 12px;">
                             <span style="font-weight: bold;">カテゴリー</span><br>
                             <?php $categories = categories(); ?>
-                            @foreach($categories as $category)
+                            @forelse($categories as $category)
                             <?php 
                                 $url_category = url('/')."?category=".$category->id;
                                 $count1 = \App\Post::where('category1_id', $category->id)->count();
                                 $count2 = \App\Post::where('category2_id', $category->id)->count();
                             ?>
                             <a href="{{ $url_category }}">{{ $category->category_name }} ({{$count1+$count2}})</a><br>
-                            @endforeach
+                            @empty
+                            <li>まだカテゴリーはありません</li>
+                            @endforelse 
+                        </div>
+
+                        <div class="sidebox" style="margin-top: 12px;">
+                            <span style="font-weight: bold;">最新の投稿</span><br>
+                            <?php $sidebar_posts = \App\Post::orderBy('created_at', 'desc')->limit(5)->get(); ?>
+                            @forelse($sidebar_posts as $sidebar_post)
+                            &nbsp;* <a href="{{ action('PostsController@show', $sidebar_post->id) }}">{{ $sidebar_post->title }}</a><br>
+                            @empty
+                            <li>まだ投稿はありません</li>
+                            @endforelse 
                         </div>
                     </div>
                 </div>

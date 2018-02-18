@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <div class="row">
-            <div class="col-md-5">
+            <div class="col-md-8">
                 <span>本文（必須）</span><br>
                 <div class="panel panel-default">
                     <div class="panel-heading">
@@ -9,11 +9,13 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-5">
+        </div>
+        <div class="row">
+            <div class="col-md-8">
                 <span>プレビュー</span><br>
                 <div class="panel panel-default prev-form">
                     <div class="panel-body">
-                        <div v-html="compiledMarkdown" style="height:350px;"></div>
+                        <div v-html="compiledMarkdown"></div>
                     </div>
                 </div>
             </div>

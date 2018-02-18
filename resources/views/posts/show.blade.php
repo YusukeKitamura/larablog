@@ -3,10 +3,12 @@
 @section('title', $post->title)
 
 @section('content')
-    <h1 style="background-color:rgba( 255, 255, 255, 0.85 )">
-        <a href="{{ url('/') }}" class="pull-right">戻る</a>
+    <div class="box" style="margin-bottom: 10px; background-color: rgba(255, 255, 200, 0.85); height: 80px;">
+        <h1 style="border-bottom: none;">
         {{ $post->title }}
-    </h1>
+        </h1>
+        <h1 style="border-bottom: none;"><a href="{{ url('/') }}" class="pull-right">戻る</a></h1>
+    </div>
 
     <div class="box" style="margin-bottom: 10px;">
         <span style="font-weight:bold;">カテゴリー</span>
