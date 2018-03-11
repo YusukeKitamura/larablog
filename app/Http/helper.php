@@ -56,3 +56,10 @@ function categories()
     $list = \App\Category::all();
     return $list;
 }
+
+//　コメント一覧を取得
+function comments()
+{
+    $list = \App\Comment::all();
+    return $list;
+}

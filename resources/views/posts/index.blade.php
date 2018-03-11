@@ -3,7 +3,11 @@
 @section('title', 'あるWebプログラマの修行日記 Ver.2')
 
 @section('content')
-    <div class="box" style="margin-bottom: 10px; background-color: rgba(255, 255, 200, 0.85); height: 80px;">
+    <div class="box" style="margin-bottom: 10px; background-color: rgba(255, 255, 200, 0.85);
+    @if (Auth::check())
+    height: 80px;
+    @endif
+    ">
         <h1 style="border-bottom: none;">
         ブログ記事一覧
         </h1>

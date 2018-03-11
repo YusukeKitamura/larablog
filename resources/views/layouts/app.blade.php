@@ -163,6 +163,16 @@
                             <li>まだ投稿はありません</li>
                             @endforelse 
                         </div>
+
+                        <div class="sidebox" style="margin-top: 12px;">
+                            <span style="font-weight: bold;">最新のコメント</span><br>
+                            <?php $sidebar_comments = \App\Comment::orderBy('created_at', 'desc')->limit(5)->get(); ?>
+                            @forelse($sidebar_comments as $sidebar_comment)
+                            &nbsp;* <a href="{{ action('PostsController@show', $sidebar_comment->post->id) }}">{{ $sidebar_comment->post->title }}</a><br>
+                            @empty
+                            <li>まだコメントはありません</li>
+                            @endforelse 
+                        </div>
                     </div>
                 </div>
             </section>
