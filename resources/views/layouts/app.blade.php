@@ -183,7 +183,7 @@
     <script src="{{ asset('js/underscore.js/1.8.3/underscore-min.js') }}"></script>
     <script src="{{ asset('js/highlight.js/9.12.0/highlight.min.js') }}"></script>
     <script src="{{ asset('js/marked/0.3.6/marked.min.js') }}"></script>
-    <script src="{{ mix('js/app.js') }}"></script>
+    <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('js/common.js') }}"></script>
     @yield('script')
 </body>
