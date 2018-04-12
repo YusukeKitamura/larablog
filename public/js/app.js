@@ -32021,11 +32021,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('span', [_vm._v("プレビュー")]), _c('br'), _vm._v(" "), _c('div', {
     staticClass: "panel panel-default prev-form"
   }, [_c('div', {
-    staticClass: "panel-body"
-  }, [_c('div', {
+    staticClass: "panel-body",
     staticStyle: {
-      "height": "350px"
-    },
+      "min-height": "360px"
+    }
+  }, [_c('div', {
     domProps: {
       "innerHTML": _vm._s(_vm.compiledMarkdown)
     }
@@ -32079,9 +32079,6 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('div', {
     staticClass: "panel-body"
   }, [_c('div', {
-    staticStyle: {
-      "height": "350px"
-    },
     domProps: {
       "innerHTML": _vm._s(_vm.compiledMarkdown)
     }
