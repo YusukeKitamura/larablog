@@ -14,7 +14,7 @@
             <div class="col-md-8">
                 <span>プレビュー</span><br>
                 <div class="panel panel-default prev-form">
-                    <div class="panel-body">
+                    <div class="panel-body" style="min-height:360px;">
                         <div v-html="compiledMarkdown"></div>
                     </div>
                 </div>
