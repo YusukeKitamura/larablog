@@ -21,16 +21,8 @@
             {!! Form::text('title', $post->title, ['placeholder' => 'title']) !!}
         </p>
         <p>
-            <span>カテゴリー１（必須）</span><br>
-            {!! Form::select('category1_id', \App\Category::all()->pluck('category_name', 'id')->toArray(), $post->category1->id, ['class' => 'form-control on-focus-select', 'placeholder' => '-- 選択 --']) !!}
-        </p>
-        <p>
-            <span>カテゴリー２</span><br>
-            @if ($post->category2)
-                {!! Form::select('category2_id', \App\Category::all()->pluck('category_name', 'id')->toArray(), $post->category2->id, ['class' => 'form-control on-focus-select', 'placeholder' => '-- 選択 --']) !!}
-            @else
-                {!! Form::select('category2_id', \App\Category::all()->pluck('category_name', 'id')->toArray(), null, ['class' => 'form-control on-focus-select', 'placeholder' => '-- 選択 --']) !!}
-            @endif
+            <span>カテゴリー（必須）</span><br>
+            {!! Form::select('category1_id', \App\Category::all()->pluck('category_name', 'id')->toArray(), $post->category->id, ['class' => 'form-control on-focus-select', 'placeholder' => '-- 選択 --']) !!}
         </p>
         <a type="button" class="btn btn-default btn-xs" href="{{ url('/categories/create') }}" style="font-size:12px;">
             新規カテゴリー作成

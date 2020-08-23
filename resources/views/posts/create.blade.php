@@ -23,14 +23,10 @@
         </p>
 
         <p>
-            <span>カテゴリー１（必須）</span><br>
-            {!! Form::select('category1_id', \App\Category::all()->pluck('category_name', 'id')->toArray(), null, ['class' => 'form-control on-focus-select', 'placeholder' => '-- 選択 --']) !!}
+            <span>カテゴリー（必須）</span><br>
+            {!! Form::select('category_id', \App\Category::all()->pluck('category_name', 'id')->toArray(), null, ['class' => 'form-control on-focus-select', 'placeholder' => '-- 選択 --']) !!}
         </p>
 
-        <p>
-            <span>カテゴリー２</span><br>
-            {!! Form::select('category2_id', \App\Category::all()->pluck('category_name', 'id')->toArray(), null, ['class' => 'form-control on-focus-select', 'placeholder' => '-- 選択 --']) !!}
-        </p>
         <a type="button" class="btn btn-default btn-xs" href="{{ url('/categories/create') }}" style="font-size:12px;">
             新規カテゴリー作成
         </a>

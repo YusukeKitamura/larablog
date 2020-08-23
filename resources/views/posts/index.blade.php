@@ -25,13 +25,10 @@
                     {{ $post->title }}
                 </a><br>
                 <span style="font-weight: bold;">
-                    カテゴリー：{{ $post->category1->category_name }}
-                    @if($post->category2)
-                    {{ '　'.$post->category2->category_name }}
-                    @endif
+                    カテゴリー：{{ $post->category->category_name }}
                 </span>
                 <br><span style="font-weight: bold;">投稿日時：{{ $post->created_at }}</span>
-                <p>{{ mb_substr($post->body, 0, 100).'・・・' }}
+                <p>{{ $post->summary().'・・・' }}
                 <a href="{{ action('PostsController@show', $post->id) }}">
                     全文を読む
                 </a>

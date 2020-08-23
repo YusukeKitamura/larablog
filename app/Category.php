@@ -14,11 +14,7 @@ class Category extends Model
         'category_name',
     ];
 
-    public function posts1() {
-        return $this->hasMany('App\Post', 'category1_id');
-    }
-
-    public function posts2() {
-        return $this->hasMany('App\Post', 'category2_id');
+    public function posts() {
+        return $this->hasMany('App\Post', 'category_id');
     }
 }

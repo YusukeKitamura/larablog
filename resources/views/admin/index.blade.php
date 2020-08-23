@@ -17,10 +17,7 @@
                 <a href="{{ action('PostsController@show', $post->id) }}">
                     {{ $post->title }}<br>
                 </a>
-                <span>カテゴリー１：{{ $post->category1->category_name }}</span>
-                @if($post->category2)
-                <span>カテゴリー２：{{ $post->category2->category_name }}</span>
-                @endif
+                <span>カテゴリー：{{ $post->category->category_name }}</span>
                 
                 <a href="{{ action('PostsController@edit', $post->id) }}">[編集]</a>
                 {!! Form::model($post, [

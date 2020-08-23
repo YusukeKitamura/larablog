@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -40,8 +41,6 @@ Route::group(['middleware' => ['web']], function () {
     Route::post('/pictures', 'PicturesController@store');
     Route::get('/pictures/{name}', ['as' => 'picture.response', 'uses' => 'PicturesController@response']);
 });
-
-
 
 Auth::routes();
 

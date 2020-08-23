@@ -12,8 +12,7 @@ class Post extends Model
     protected $dates = ['deleted_at'];
     protected $fillable = [
         'title',
-        'category1_id',
-        'category2_id',
+        'category_id',
         'body'
     ];
 
@@ -21,11 +20,12 @@ class Post extends Model
         return $this->hasMany('App\Comment');
     }
 
-    public function category1() {
-        return $this->belongsTo('App\Category', 'category1_id');
+    public function category() {
+        return $this->belongsTo('App\Category', 'category_id');
     }
 
-    public function category2() {
-        return $this->belongsTo('App\Category', 'category2_id');
+    public function summary() {
+        $tag_removed = preg_replace('/<("[^"]*"|\'[^\']*\'|[^\'">])*>/','',$this->body);
+        return mb_substr($tag_removed, 0, 100);
     }
 }

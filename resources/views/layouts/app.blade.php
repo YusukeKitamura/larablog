@@ -145,10 +145,9 @@
                             @forelse($categories as $category)
                             <?php 
                                 $url_category = url('/')."?category=".$category->id;
-                                $count1 = \App\Post::where('category1_id', $category->id)->count();
-                                $count2 = \App\Post::where('category2_id', $category->id)->count();
+                                $count = \App\Post::where('category_id', $category->id)->count();
                             ?>
-                            <a href="{{ $url_category }}">{{ $category->category_name }} ({{$count1+$count2}})</a><br>
+                            <a href="{{ $url_category }}">{{ $category->category_name }} ({{$count}})</a><br>
                             @empty
                             <li>まだカテゴリーはありません</li>
                             @endforelse 

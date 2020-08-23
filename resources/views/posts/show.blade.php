@@ -13,10 +13,7 @@
     <div class="box" style="margin-bottom: 10px;">
         <span style="font-weight:bold;">カテゴリー</span>
         <p>
-        {{ $post->category1->category_name }}
-        @if($post->category2)
-        {{ '　'.$post->category2->category_name }}
-        @endif
+        {{ $post->category->category_name }}
         </p>
         <span style="font-weight:bold;">投稿日時</span>
         <p>{{ $post->created_at }}</p>
@@ -77,7 +74,6 @@
     function deleteComment(e, id) {
         'use strict';
         if (confirm('このコメントを削除しますか？')) {
-            //console.log(e.detaset);
             document.getElementById('del-form-' + id).submit();
         }
     }

@@ -13,9 +13,8 @@ class PostsController extends Controller
         $posts = Post::orderBy('created_at', 'desc');
         if ($request->get('category')) {
             $posts = $posts->where(function($query) use ($request) {
-                        $query->orWhere('category1_id', $request->get('category'))
-                              ->orWhere('category2_id', $request->get('category'));
-                        });
+                        $query->where('category_id', $request->get('category'));
+                    });
         }
         if ($request->get('words')) {
             $posts = $posts->where(function($query) use ($request) {

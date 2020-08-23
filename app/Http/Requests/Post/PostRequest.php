@@ -26,7 +26,7 @@ class PostRequest extends FormRequest
     {
         $rules = [
             'title'         => 'required|max:40',
-            'category1_id'  => 'required',
+            'category_id'  => 'required',
             'body'          => 'required'
         ];
 
@@ -38,7 +38,7 @@ class PostRequest extends FormRequest
         return [
             'title.required'          => 'タイトルは必須です。',
             'title.max'               => 'タイトルは最大40文字です。',
-            'category1_id.required'   => 'カテゴリー１は必須です。',
+            'category_id.required'   => 'カテゴリーは必須です。',
             'body.required'           => '本文は必須です。',
         ];
     }

@@ -1,4 +1,4 @@
-const { mix } = require('laravel-mix');
+const mix = require('laravel-mix');
 
 /*
  |--------------------------------------------------------------------------
@@ -11,5 +11,9 @@ const { mix } = require('laravel-mix');
  |
  */
 
-mix.js('resources/assets/js/app.js', 'public/js')
+mix.js('resources/assets/js/app.js', 'public/js').version()
+   .autoload({
+      "jquery": ['$', 'window.jQuery'],
+      "vue": ['Vue', 'window.Vue']
+   })
    .sass('resources/assets/sass/app.scss', 'public/css');
