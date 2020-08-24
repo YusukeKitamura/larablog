@@ -63,3 +63,15 @@ function comments()
     $list = \App\Comment::all();
     return $list;
 }
+
+function blog_title()
+{
+    $option = \App\Option::where("name", "title")->first();
+    return $option ? $option->value : "";
+}
+
+function blog_description()
+{
+    $option = \App\Option::where("name", "description")->first();
+    return $option ? $option->value : "";
+}

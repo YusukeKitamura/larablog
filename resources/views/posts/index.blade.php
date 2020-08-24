@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
-@section('title', 'あるWebプログラマの修行日記 Ver.2')
+@section('title')
+{{ blog_title() }}
+@endsection
 
 @section('content')
     <div class="box" style="margin-bottom: 10px; background-color: rgba(255, 255, 200, 0.85);
